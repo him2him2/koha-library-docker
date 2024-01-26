@@ -39,7 +39,9 @@ jobs:
           sudo apt clean
           sudo apt install koha-common
           sudo apt install apache2
-          sudo a2enmod rewrite sudo a2enmod cgi sudo systemctl restart apache2.service
+          sudo a2enmod rewrite 
+          sudo a2enmod cgi 
+          sudo systemctl restart apache2.service
           
       -
         name: Login to Docker Hub
