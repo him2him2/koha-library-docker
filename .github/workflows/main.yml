@@ -33,6 +33,7 @@ jobs:
       - name: Run a multi-line script
         run: |
           wget -O- https://debian.koha-community.org/koha/gpg.asc | sudo apt-key add -
+          echo deb http://debian.koha-community.org/koha stable main | sudo tee /etc/apt/sources.list.d/koha.list
           sudo apt update
           sudo apt upgrade
           sudo apt clean
