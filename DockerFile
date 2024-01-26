@@ -1,0 +1,8 @@
+from ubuntu:20.04
+
+  run apt update
+  run apt upgrade
+  run apr clean
+  run apt install apache2
+
+  run wget -O- https://debian.koha-community.org/koha/gpg.asc | sudo apt-key add -
