@@ -33,10 +33,10 @@ jobs:
       - name: Run a multi-line script
         run: |
           wget -O- https://debian.koha-community.org/koha/gpg.asc | sudo apt-key add -
-          apt update
-          apt upgrade
-          apt clean
-          apt install koha-common
+          sudo apt update
+          sudo apt upgrade
+          sudo apt clean
+          sudo apt install koha-common
           sudo apt install apache2
           sudo a2enmod rewrite sudo a2enmod cgi sudo systemctl restart apache2.service
           
