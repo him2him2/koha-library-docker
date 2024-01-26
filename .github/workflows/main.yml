@@ -53,6 +53,6 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           push: true
-          tags: him2him2/Koha-Library:latest
+          tags: him2him2/koha-library:latest
 
 
