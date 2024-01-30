@@ -3,6 +3,7 @@ from ubuntu:20.04
 RUN  apt update
 RUN  apt upgrade -y
 RUN  apt install -y wget sudo wget gnupg2
+RUN DEBIAN_FRONTEND=noninteractive TZ=America/New_York apt-get -y install tzdata
 
 RUN  wget -qO - https://debian.koha-community.org/koha/gpg.asc | gpg --dearmor -o /usr/share/keyrings/koha-keyring.gpg
 
