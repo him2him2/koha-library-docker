@@ -9,6 +9,6 @@ RUN  apt install apache2
 RUN  apt clean
 RUN  a2enmod rewrite 
 RUN  a2enmod cgi 
-RUN  systemctl restart apache2.service
+RUN  systemctl restart apache2.service 
 
  
