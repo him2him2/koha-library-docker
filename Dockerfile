@@ -2,10 +2,11 @@ from ubuntu:20.04
 
 RUN  apt update
 RUN  apt upgrade -y
-RUN  apt install -y wget
-RUN wget -O- https://debian.koha-community.org/koha/gpg.asc 
-RUN apt-key add -
-RUN echo deb http://debian.koha-community.org/koha stable main |  tee /etc/apt/sources.list.d/koha.list
+RUN  apt install -y wget sudo wget gnupg2
+
+RUN  wget -qO - https://debian.koha-community.org/koha/gpg.asc | gpg --dearmor -o /usr/share/keyrings/koha-keyring.gpg
+
+RUN  echo deb [signed-by=/usr/share/keyrings/koha-keyring.gpg] https://debian.koha-community.org/koha stable main |  tee /etc/apt/sources.list.d/koha.list
 RUN  apt update
 RUN  apt upgrade -y
 RUN  apt install -y koha-common
