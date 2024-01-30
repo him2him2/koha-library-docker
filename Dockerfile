@@ -21,10 +21,10 @@ RUN cat /etc/apache2/ports.conf
 
 #RUN echo 'Listen 80' /etc/apache2/ports.conf
 
-RUN koha-create --create-db "homeLib"
+RUN koha-create --create-db homeLib
 RUN a2enmod headers proxy_http 
-RUN koha-plack --enable "homeLib"
-RUN koha-plack --start "homeLib"
+RUN koha-plack --enable homeLib
+RUN koha-plack --start homeLib
 RUN service apache2 restart
 
 
